@@ -39,8 +39,7 @@ object RtpAreaAnalysissql {
       * 处理数据 SQL方式
       */
 
-    //requestmode processnode iseffective isbilling isbid iswin
-    //adorderid  winprice adpayment
+    //requestmode processnode iseffective isbilling isbid iswin adorderid  winprice adpayment
     linesRDD.registerTempTable("log")
     val result: DataFrame = ssc.sql(
       """
