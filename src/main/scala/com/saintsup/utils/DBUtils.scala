@@ -2,7 +2,7 @@ package com.saintsup.utils
 
 import java.util.Properties
 
-import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.{DataFrame, SaveMode}
 
 /**
   * 写入数据库
@@ -34,6 +34,6 @@ object DBUtils {
     props.setProperty("driver",driver)
     props.setProperty("user",user)
     props.setProperty("password",password)
-    resultDF.write.jdbc(url,tableName,props)
+    resultDF.write.mode(SaveMode.Overwrite).jdbc(url,tableName,props)
   }
 }
